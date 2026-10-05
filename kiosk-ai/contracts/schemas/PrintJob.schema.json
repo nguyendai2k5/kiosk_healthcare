@@ -1,0 +1,39 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "content": {
+      "minLength": 1,
+      "title": "Content",
+      "type": "string"
+    },
+    "document_type": {
+      "minLength": 1,
+      "title": "Document Type",
+      "type": "string"
+    },
+    "patient_id": {
+      "minLength": 1,
+      "title": "Patient Id",
+      "type": "string"
+    },
+    "print_id": {
+      "minLength": 1,
+      "title": "Print Id",
+      "type": "string"
+    },
+    "priority": {
+      "default": "normal",
+      "minLength": 1,
+      "title": "Priority",
+      "type": "string"
+    }
+  },
+  "required": [
+    "print_id",
+    "patient_id",
+    "document_type",
+    "content"
+  ],
+  "title": "PrintJob",
+  "type": "object"
+}

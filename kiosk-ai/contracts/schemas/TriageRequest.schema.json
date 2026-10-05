@@ -1,0 +1,254 @@
+{
+  "$defs": {
+    "AudioEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "audio_uri": {
+          "minLength": 1,
+          "title": "Audio Uri",
+          "type": "string"
+        },
+        "duration_ms": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Duration Ms"
+        },
+        "sample_rate_hz": {
+          "anyOf": [
+            {
+              "minimum": 1,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Sample Rate Hz"
+        }
+      },
+      "required": [
+        "audio_uri"
+      ],
+      "title": "AudioEvent",
+      "type": "object"
+    },
+    "IdOcrEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "confidence": {
+          "anyOf": [
+            {
+              "maximum": 1.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Confidence"
+        },
+        "document_type": {
+          "minLength": 1,
+          "title": "Document Type",
+          "type": "string"
+        },
+        "image_uri": {
+          "minLength": 1,
+          "title": "Image Uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "document_type",
+        "image_uri"
+      ],
+      "title": "IdOcrEvent",
+      "type": "object"
+    },
+    "VisionEvent": {
+      "additionalProperties": false,
+      "properties": {
+        "camera_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Camera Id"
+        },
+        "frame_index": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Frame Index"
+        },
+        "image_uri": {
+          "minLength": 1,
+          "title": "Image Uri",
+          "type": "string"
+        }
+      },
+      "required": [
+        "image_uri"
+      ],
+      "title": "VisionEvent",
+      "type": "object"
+    },
+    "Vitals": {
+      "additionalProperties": false,
+      "properties": {
+        "diastolic_bp_mmhg": {
+          "anyOf": [
+            {
+              "maximum": 220,
+              "minimum": 20,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Diastolic Bp Mmhg"
+        },
+        "heart_rate_bpm": {
+          "anyOf": [
+            {
+              "maximum": 300.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Heart Rate Bpm"
+        },
+        "spo2_percent": {
+          "anyOf": [
+            {
+              "maximum": 100.0,
+              "minimum": 0.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Spo2 Percent"
+        },
+        "systolic_bp_mmhg": {
+          "anyOf": [
+            {
+              "maximum": 260,
+              "minimum": 20,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Systolic Bp Mmhg"
+        },
+        "temperature_c": {
+          "anyOf": [
+            {
+              "maximum": 45.0,
+              "minimum": 25.0,
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Temperature C"
+        }
+      },
+      "title": "Vitals",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "audio": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/AudioEvent"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "id_ocr": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/IdOcrEvent"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "patient_id": {
+      "minLength": 1,
+      "title": "Patient Id",
+      "type": "string"
+    },
+    "vision": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/VisionEvent"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "vitals": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Vitals"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "patient_id"
+  ],
+  "title": "TriageRequest",
+  "type": "object"
+}

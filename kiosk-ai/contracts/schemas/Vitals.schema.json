@@ -1,0 +1,77 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "diastolic_bp_mmhg": {
+      "anyOf": [
+        {
+          "maximum": 220,
+          "minimum": 20,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Diastolic Bp Mmhg"
+    },
+    "heart_rate_bpm": {
+      "anyOf": [
+        {
+          "maximum": 300.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Heart Rate Bpm"
+    },
+    "spo2_percent": {
+      "anyOf": [
+        {
+          "maximum": 100.0,
+          "minimum": 0.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Spo2 Percent"
+    },
+    "systolic_bp_mmhg": {
+      "anyOf": [
+        {
+          "maximum": 260,
+          "minimum": 20,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Systolic Bp Mmhg"
+    },
+    "temperature_c": {
+      "anyOf": [
+        {
+          "maximum": 45.0,
+          "minimum": 25.0,
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Temperature C"
+    }
+  },
+  "title": "Vitals",
+  "type": "object"
+}

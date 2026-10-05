@@ -1,0 +1,40 @@
+{
+  "additionalProperties": false,
+  "properties": {
+    "camera_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Camera Id"
+    },
+    "frame_index": {
+      "anyOf": [
+        {
+          "minimum": 0,
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Frame Index"
+    },
+    "image_uri": {
+      "minLength": 1,
+      "title": "Image Uri",
+      "type": "string"
+    }
+  },
+  "required": [
+    "image_uri"
+  ],
+  "title": "VisionEvent",
+  "type": "object"
+}

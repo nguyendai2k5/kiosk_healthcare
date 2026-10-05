@@ -1,0 +1,11 @@
+{
+  "enum": [
+    "VALIDATION_ERROR",
+    "INTERNAL_ERROR",
+    "EXTERNAL_TIMEOUT",
+    "NOT_FOUND",
+    "UNSUPPORTED_FORMAT"
+  ],
+  "title": "ErrorCode",
+  "type": "string"
+}

@@ -1,0 +1,5 @@
+# Bỏ qua đích danh file server.key này
+kiosk-ai/infra/mosquitto/certs/server.key
+
+# Hoặc tốt hơn là bỏ qua tất cả các file có đuôi .key trong toàn bộ dự án
+*.key
